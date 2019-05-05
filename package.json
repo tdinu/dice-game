@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "dice roll game",
   "main": "index.js",
+  "homepage": "https://tdinu.github.io/dice-game/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dice-roll-proj"
+    "deploy": "gh-pages -d dice-roll"
   },
   "author": "",
   "license": "ISC",
