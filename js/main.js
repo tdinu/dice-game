@@ -11,7 +11,7 @@ document.querySelector('.btn-roll').addEventListener('click', _ => {
         diceNumber = Math.floor(Math.random() * 6) + 1;
 
         // correspondent img
-        diceImage = `img/Dice-${diceNumber}-b.svg.png`;
+        diceImage = `dist/img/Dice-${diceNumber}-b.svg.png`;
 
         // player's dice img
         playerDice = document.querySelector(`.img-${activePlayer}`);
