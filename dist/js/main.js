@@ -103,3 +103,14 @@ function init() {
     document.querySelector(`.player-1`).classList.add('active');
 }
 
+// btn-info
+document.querySelector('.btn-info').addEventListener('click', _ => {
+    // console.log('info clicked');
+    document.querySelector('.text-info').style.display = 'block';
+});
+
+// btn-info-close
+document.querySelector('.btn-info-close').addEventListener('click', _ => {
+    // console.log('info clicked');
+    document.querySelector('.text-info').style.display = 'none';
+});

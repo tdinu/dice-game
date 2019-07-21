@@ -1,8 +1,6 @@
-
 :root {
     --main-bg-color: gray;
     --main-bg-img: url(/img/black-and-white-close-up-cube.jpg);
-    
 }
 
 * {
@@ -17,25 +15,90 @@
     clear: both;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 body {
-    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
     line-height: 1.5;
-    background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(../img/black-and-white-close-up-cube.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url(../img/black-and-white-close-up-cube.jpg);
     background-size: cover;
     background-position: center;
     color: white;
 }
 
+.info {
+    /* display: none; */
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+}
+.btn-info {
+    display: block;
+    /*  width: 64px;
+    height: 64px; */
+    position: fixed;
+    top: 8%;
+    left: 5%;
+    background: none;
+    border: none;
+}
+
+.btn-info i {
+    font-size: 60px;
+    color: white;
+}
+
+.text-info {
+    /* display: none; */
+    position: absolute;
+    top: 8%;
+    left: 2%;
+    width: 20%;
+    height: 80%;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: scroll;
+    z-index: 10;
+}
+
+/* .text-info {
+        
+    width: 100%;
+    height: 100%;
+    font-size: .8rem;
+   
+} */
+
+.text-info span {
+    position: absolute;
+    right: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 7px;
+}
+
+.text-info ul {
+    list-style: circle;
+    text-align: left;
+    list-style-position: inside;
+    padding-right: 20px;
+}
+
+.text-info ul li {
+    padding: 5px;
+}
+
 header p {
     font-size: 2rem;
     color: darkred;
-    margin: 1rem; 
-    text-shadow: 1px 1px gray;  
+    margin: 1rem;
+    text-shadow: 1px 1px gray;
 }
 
 .container {
@@ -43,7 +106,7 @@ header p {
     width: 80%;
     margin: 5% auto 0 auto;
     height: calc(100vh - 9rem);
-    box-shadow: 0 10px 50px rgba(0, 0, 0, .3);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .dice {
@@ -53,10 +116,10 @@ header p {
     padding: 0 2rem;
 }
 
-.dice>div {
+.dice > div {
     /* width: 30%; */
     margin: 1rem;
-    padding: .2rem;
+    padding: 0.2rem;
     border-radius: 10px;
 }
 
@@ -65,27 +128,26 @@ header p {
 }
 
 .active {
-    background-color: rgba(128, 128, 128, .1);
+    background-color: rgba(128, 128, 128, 0.1);
 }
 
-.active .player-name::after { 
+.active .player-name::after {
     content: '\2022';
     font-size: 3rem;
     color: darkred;
     position: absolute;
     top: -1rem;
-    right: -.2rem;
-} 
+    right: -0.2rem;
+}
 
-.active>div {
+.active > div {
     border: 3px solid transparent;
-    background: rgba(128, 128, 128, .1);
+    background: rgba(128, 128, 128, 0.1);
 }
 
 .active .player-name {
     font-weight: 500;
 }
-
 
 div.player-score {
     width: 4rem;
@@ -106,7 +168,7 @@ div.player-score {
 button {
     font-size: 1.5rem;
     /* font-weight: 100; */
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 20px;
     cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -139,16 +201,16 @@ button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-} 
+}
 
 .player-current-score {
     background: black;
-    padding: .2rem 1rem;
-    border-radius: 10px;  
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
 }
 
 i {
-    color: darkred;    
+    color: darkred;
 }
 
 div.winner {
@@ -161,34 +223,46 @@ footer {
     /* margin: 0 auto; */
     font-size: 1rem;
     position: fixed;
-    bottom: 1rem; 
+    bottom: 1rem;
     right: 25%;
     display: block;
     width: 50%;
-    padding: .5rem;
-    text-align: center; 
-    background: rgba(128, 128, 128, .2);
+    padding: 0.5rem;
+    text-align: center;
+    background: rgba(128, 128, 128, 0.2);
 }
 
-  /* ----------- iPhone 4 and 4S ----------- 320 - */
-  /* ----------- iPhone 6, 6S, 7 and 8 ----- 375 - */
+/* media queries */
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait */
-@media only screen 
-and (min-device-width: 320px) 
-and (max-device-width: 667px) 
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) { 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     body {
         overflow-y: scroll;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 1.2;
+    }
+
+    .text-info {  
+        width: 80%;
+        font-size: .8rem;  
+        margin: 0 auto; 
+    }
+
+    .btn-info i {
+        font-size: 48px;
     }
 
     .dice {
         display: block;
         margin: 1.5rem auto;
         width: 100%;
+    }
+
+    .dice > div {
+        width: 25%;
+        margin: 1.5rem auto;
     }
 
     .dice img {
@@ -216,62 +290,54 @@ and (orientation: portrait) {
     }
 
     button {
-        font-size: 1.1rem;
-        padding: .2rem;
+        font-size: 1.3rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
-  
+
     footer {
         display: none;
     }
 }
 
 /* Landscape */
-@media only screen 
-and (min-device-width: 320px) 
-and (max-device-width: 667px) 
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) { 
-    body {
-        font-size: 1.1rem;
-        line-height: 1.1;
-    }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
     .container {
         width: 100%;
         margin: 0;
-        margin-top: .2rem;
+        margin-top: 2rem;
     }
 
-    .dice {
-        width: 25%;
-        margin: 0;
-        padding: 0;
+    .text-info {
+        
+        width: 80%;
+        height: 50%;
+        font-size: .8rem;
+       /* margin: 0 auto; */
     }
 
-    .dice img {
-        width: 60%;
+    .btn-info i {
+        font-size: 48px;
     }
 
     div.player-score {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         width: 3rem;
         height: 3rem;
         line-height: 2rem;
     }
 
     .btn button:nth-child(2) {
-        margin-top: 2.5rem;
+        margin-top: 5.5rem;
     }
-
     button {
-        font-size: 1.2rem;
-        padding: .2rem;
+        font-size: 1.4rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
-    
+
     .btn-new {
-        margin-top: 2%; 
+        margin-top: 2%;
     }
 
     footer {
@@ -279,25 +345,34 @@ and (orientation: landscape) {
     }
 }
 
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* ----------- Nexus 7 ----------- */
 
 /* Portrait and Landscape */
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: landscape) {
     body {
+        /* overflow-y: scroll; */
         font-size: 1.1rem;
         line-height: 1.1;
+    }
+
+    .text-info {
+        
+        width: 100%;
+        height: 100%;
+        font-size: .8rem;
+       
+    }
+
+    .btn-info i {
+        font-size: 48px;
     }
 
     .container {
         width: 100%;
         margin: 0;
-        margin-top: .2rem;
+        margin-top: 0.2rem;
     }
 
     .dice {
@@ -311,7 +386,7 @@ and (orientation: landscape) {
     }
 
     div.player-score {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         width: 3rem;
         height: 3rem;
         line-height: 2rem;
@@ -323,36 +398,45 @@ and (orientation: landscape) {
 
     button {
         font-size: 1.2rem;
-        padding: .2rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
-    
+
     .btn-new {
-        margin-top: 2%; 
+        margin-top: 2%;
     }
 
     footer {
         display: none;
-    }    
+    }
 }
+
 
 /* ----------- iPhone X ----------- */
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
     body {
         font-size: 1.1rem;
         line-height: 1;
     }
 
+    .btn-info i {
+        font-size: 40px;
+    }
+
     .container {
         width: 100%;
         margin: 0;
-        margin-top: .2rem;
+        margin-top: 0.2rem;
+    }
+
+    .text-info {
+        
+        width: 100%;
+        height: 100%;
+        font-size: .8rem;
+       
     }
 
     .dice {
@@ -366,7 +450,7 @@ and (orientation: landscape) {
     }
 
     div.player-score {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         width: 3rem;
         height: 3rem;
         line-height: 2rem;
@@ -374,40 +458,47 @@ and (orientation: landscape) {
 
     button {
         font-size: 1.1rem;
-        padding: .1rem;
+        padding: 0.1rem;
         border-radius: 10px;
     }
-    
+
     .btn-new {
-        margin-top: 2%; 
+        margin-top: 2%;
     }
 
     footer {
         display: none;
-    }   
+    }
 }
 
-/* ----------- Nexus 7 ----------- */
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
 
 /* Landscape */
-@media screen 
-  and (device-width: 601px) 
-  and (device-height: 906px) 
-  and (-webkit-min-device-pixel-ratio: 1.331) 
-  and (-webkit-max-device-pixel-ratio: 1.332) 
-  and (orientation: landscape) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
     body {
-        /* overflow-y: scroll; */
         font-size: 1.1rem;
         line-height: 1.1;
+    }
+
+    .btn-info i {
+        font-size: 40px;
     }
 
     .container {
         width: 100%;
         margin: 0;
-        margin-top: .2rem;
+        margin-top: 0.2rem;
+    }
+
+    .text-info {
+        
+        width: 100%;
+        height: 100%;
+        font-size: .8rem;
+       
     }
 
     .dice {
@@ -421,7 +512,7 @@ and (orientation: landscape) {
     }
 
     div.player-score {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         width: 3rem;
         height: 3rem;
         line-height: 2rem;
@@ -433,42 +524,48 @@ and (orientation: landscape) {
 
     button {
         font-size: 1.2rem;
-        padding: .2rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
-    
+
     .btn-new {
-        margin-top: 2%; 
+        margin-top: 2%;
     }
 
     footer {
         display: none;
-    }    
+    }
 }
 
-/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+
+/* ----------- iPhone 4 and 4S ----------- 320 - */
+/* ----------- iPhone 6, 6S, 7 and 8 ----- 375 - */
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     body {
         overflow-y: scroll;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         line-height: 1.2;
+    }
+
+    .text-info {
+        
+        width: 100%;
+        height: 100%;
+        font-size: .8rem;
+       
+    }
+
+    .btn-info i {
+        font-size: 32px;
     }
 
     .dice {
         display: block;
         margin: 1.5rem auto;
         width: 100%;
-    }
-
-    .dice>div {
-        width: 25%;
-        margin: 1.5rem auto;
     }
 
     .dice img {
@@ -496,8 +593,8 @@ and (orientation: landscape) {
     }
 
     button {
-        font-size: 1.3rem;
-        padding: .2rem;
+        font-size: 1.1rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
 
@@ -507,42 +604,63 @@ and (orientation: landscape) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    body {
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+
+    .text-info {
+        
+        width: 100%;
+        height: 100%;
+        font-size: .9rem;
+       
+    }
+
+    .btn-info i {
+        font-size: 32px;
+    }
 
     .container {
         width: 100%;
         margin: 0;
-        margin-top: 2rem;
+        margin-top: 0.2rem;
     }
 
-    
+    .dice {
+        width: 25%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dice img {
+        width: 60%;
+    }
+
     div.player-score {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         width: 3rem;
         height: 3rem;
         line-height: 2rem;
     }
 
     .btn button:nth-child(2) {
-        margin-top: 5.5rem;
+        margin-top: 2.5rem;
     }
+
     button {
-        font-size: 1.4rem;
-        padding: .2rem;
+        font-size: 1.2rem;
+        padding: 0.2rem;
         border-radius: 10px;
     }
-    
+
     .btn-new {
-        margin-top: 2%; 
+        margin-top: 2%;
     }
 
     footer {
         display: none;
-    }    
+    }
 }
-
 
