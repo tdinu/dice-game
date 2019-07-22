@@ -18,6 +18,7 @@
 html,
 body {
     height: 100%;
+    /* min-height: 100vh; */
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,34 +28,13 @@ body {
         url(../img/black-and-white-close-up-cube.jpg);
     background-size: cover;
     background-position: center;
-    color: white;
-}
-
-.info {
-    /* display: none; */
-    /* position: relative; */
-    width: 100%;
-    height: 100%;
-    padding: 3%;
-}
-.btn-info {
-    display: block;
-    /*  width: 64px;
-    height: 64px; */
-    position: fixed;
-    top: 8%;
-    left: 5%;
-    background: none;
-    border: none;
-}
-
-.btn-info i {
-    font-size: 60px;
-    color: white;
+    background-repeat: no-repeat;
+    /* min-height: 100vh; */
+    /* color: white; */
 }
 
 .text-info {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 8%;
     left: 2%;
@@ -65,15 +45,8 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     overflow: scroll;
     z-index: 10;
+    color: white;
 }
-
-/* .text-info {
-        
-    width: 100%;
-    height: 100%;
-    font-size: .8rem;
-   
-} */
 
 .text-info span {
     position: absolute;
@@ -101,11 +74,27 @@ header p {
     text-shadow: 1px 1px gray;
 }
 
+.btn-info {
+    /* display: block; */
+
+    position: fixed;
+    top: 8%;
+    left: 5%;
+    background: none;
+    border: none;
+}
+
+.btn-info i {
+    font-size: 60px;
+    color: white;
+}
+
 .container {
     text-align: center;
     width: 80%;
     margin: 5% auto 0 auto;
     height: calc(100vh - 9rem);
+
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -114,6 +103,7 @@ header p {
     margin: 2rem;
     text-align: center;
     padding: 0 2rem;
+    color: white;
 }
 
 .dice > div {
@@ -167,7 +157,6 @@ div.player-score {
 
 button {
     font-size: 1.5rem;
-    /* font-weight: 100; */
     padding: 0.5rem;
     border-radius: 20px;
     cursor: pointer;
@@ -190,7 +179,6 @@ button {
 
 .btn button {
     display: block;
-    /* margin-bottom: 5rem; */
 }
 
 .btn button:nth-child(2) {
@@ -211,6 +199,16 @@ button {
 
 i {
     color: darkred;
+    border-radius: 50%;
+
+    font-weight: 100;
+    padding: 2px 8px;
+}
+
+.btn-new i,
+.btn-roll i,
+.btn-hold i {
+    border: solid 1px darkred;
 }
 
 div.winner {
@@ -230,6 +228,7 @@ footer {
     padding: 0.5rem;
     text-align: center;
     background: rgba(128, 128, 128, 0.2);
+    color: white;
 }
 
 /* media queries */
@@ -244,10 +243,10 @@ footer {
         line-height: 1.2;
     }
 
-    .text-info {  
+    .text-info {
         width: 80%;
-        font-size: .8rem;  
-        margin: 0 auto; 
+        font-size: 0.8rem;
+        margin: 0 auto;
     }
 
     .btn-info i {
@@ -309,11 +308,10 @@ footer {
     }
 
     .text-info {
-        
         width: 80%;
         height: 50%;
-        font-size: .8rem;
-       /* margin: 0 auto; */
+        font-size: 0.8rem;
+        /* margin: 0 auto; */
     }
 
     .btn-info i {
@@ -358,11 +356,9 @@ footer {
     }
 
     .text-info {
-        
         width: 100%;
         height: 100%;
-        font-size: .8rem;
-       
+        font-size: 0.8rem;
     }
 
     .btn-info i {
@@ -411,7 +407,6 @@ footer {
     }
 }
 
-
 /* ----------- iPhone X ----------- */
 
 /* Landscape */
@@ -432,11 +427,9 @@ footer {
     }
 
     .text-info {
-        
         width: 100%;
         height: 100%;
-        font-size: .8rem;
-       
+        font-size: 0.8rem;
     }
 
     .dice {
@@ -471,7 +464,6 @@ footer {
     }
 }
 
-
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
@@ -494,11 +486,9 @@ footer {
     }
 
     .text-info {
-        
         width: 100%;
         height: 100%;
-        font-size: .8rem;
-       
+        font-size: 0.8rem;
     }
 
     .dice {
@@ -537,8 +527,6 @@ footer {
     }
 }
 
-
-
 /* ----------- iPhone 4 and 4S ----------- 320 - */
 /* ----------- iPhone 6, 6S, 7 and 8 ----- 375 - */
 
@@ -551,11 +539,9 @@ footer {
     }
 
     .text-info {
-        
         width: 100%;
         height: 100%;
-        font-size: .8rem;
-       
+        font-size: 0.8rem;
     }
 
     .btn-info i {
@@ -611,11 +597,9 @@ footer {
     }
 
     .text-info {
-        
         width: 100%;
         height: 100%;
-        font-size: .9rem;
-       
+        font-size: 0.9rem;
     }
 
     .btn-info i {
@@ -663,4 +647,3 @@ footer {
         display: none;
     }
 }
-
