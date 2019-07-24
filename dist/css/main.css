@@ -17,7 +17,7 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     /* min-height: 100vh; */
 }
 body {
@@ -29,8 +29,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* min-height: 100vh; */
-    /* color: white; */
 }
 
 .text-info {
@@ -38,10 +36,11 @@ body {
     position: absolute;
     top: 8%;
     left: 2%;
-    width: 20%;
-    height: 80%;
+    width: 80%;
+    max-height: 80%;
+    overflow: scroll;
     margin: 0 auto;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     background-color: rgba(0, 0, 0, 0.9);
     overflow: scroll;
     z-index: 10;
@@ -57,14 +56,15 @@ body {
 }
 
 .text-info ul {
-    list-style: circle;
+    list-style-type: disc;
+    font-family: 'Courier New', Courier, monospace;
     text-align: left;
     list-style-position: inside;
     padding-right: 20px;
 }
 
 .text-info ul li {
-    padding: 5px;
+    padding: 0.8rem;
 }
 
 header p {
@@ -75,8 +75,6 @@ header p {
 }
 
 .btn-info {
-    /* display: block; */
-
     position: fixed;
     top: 8%;
     left: 5%;
@@ -85,17 +83,49 @@ header p {
 }
 
 .btn-info i {
-    font-size: 60px;
+    font-size: 3.8rem;
     color: white;
 }
 
 .container {
     text-align: center;
     width: 80%;
+    /* max-height: 90vh; */
     margin: 5% auto 0 auto;
-    height: calc(100vh - 9rem);
-
+    color: white;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.players {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    align-content: center;
+    /* height: calc(100vh - 9rem); */
+    height: 85vh;
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 1rem;
+    width: 60%;
+    justify-self: center;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /*position: absolute;
+    left: 50%;
+    transform: translateX(-50%);*/
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dice {
@@ -104,17 +134,6 @@ header p {
     text-align: center;
     padding: 0 2rem;
     color: white;
-}
-
-.dice > div {
-    /* width: 30%; */
-    margin: 1rem;
-    padding: 0.2rem;
-    border-radius: 10px;
-}
-
-.player-name {
-    position: relative;
 }
 
 .active {
@@ -139,6 +158,10 @@ header p {
     font-weight: 500;
 }
 
+.player-name {
+    position: relative;
+}
+
 div.player-score {
     width: 4rem;
     height: 4rem;
@@ -152,37 +175,12 @@ div.player-score {
     background: rgba(250, 250, 250, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 3px white;
-    /* width: 10%; */
+    width: 200px;
 }
 
-button {
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /*position: absolute;
-    left: 50%;
-    transform: translateX(-50%);*/
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn button:hover {
-    font-weight: 100;
-}
-
-.btn {
-    display: inline-block;
-    margin: 2rem;
-    text-align: center;
-}
-
-.btn button {
-    display: block;
-}
-
-.btn button:nth-child(2) {
-    margin-top: 5rem;
+.dice > div {
+    padding: 0.2rem;
+    border-radius: 10px;
 }
 
 .player-current-box {
@@ -203,12 +201,6 @@ i {
 
     font-weight: 100;
     padding: 2px 8px;
-}
-
-.btn-new i,
-.btn-roll i,
-.btn-hold i {
-    border: solid 1px darkred;
 }
 
 div.winner {
@@ -233,417 +225,91 @@ footer {
 
 /* media queries */
 
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (max-width: 900px) {
+    html {
+        overflow: hidden;
+    }
     body {
-        overflow-y: scroll;
-        font-size: 1.3rem;
-        line-height: 1.2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+    button {
+        font-size: 1.1rem;
+    }
+    .btn {
+        width: 5.5rem;
+    }
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    .dice img {
+        width: 150px;
+    }
+    .btn-info i {
+        font-size: 2.8rem;
+    }
+    footer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+    button {
+        font-size: 1rem;
+        /* padding: .2rem; */
+    }
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    .dice img {
+        width: 75px;
+    }
+    .btn-info i {
+        font-size: 2.8rem;
+    }
+    .text-info {
+        font-size: 1rem;
+    }
+    i {
+        padding: 2px 4px;
+    }
+    div.player-score {
+        margin: 0.3rem auto;
+        width: 3rem;
+        height: 3rem;
+        line-height: 2.25rem;
+    }
+    .dice {
+        margin: 0.8rem;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .players {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr auto 3fr;
     }
 
-    .text-info {
-        width: 80%;
-        font-size: 0.8rem;
+    .btn {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0.5rem;
+        width: 60%;
+        justify-self: center;
+    }
+    html {
+        overflow: hidden;
+    }
+    .player-current-box {
+        width: 40%;
         margin: 0 auto;
-    }
-
-    .btn-info i {
-        font-size: 48px;
-    }
-
-    .dice {
-        display: block;
-        margin: 1.5rem auto;
-        width: 100%;
-    }
-
-    .dice > div {
-        width: 25%;
-        margin: 1.5rem auto;
-    }
-
-    .dice img {
-        width: 35%;
-    }
-
-    div.player-score {
-        width: 3rem;
-        height: 3rem;
-        line-height: 2.1rem;
-    }
-
-    .btn {
-        width: 80%;
-        margin: 1rem auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        align-self: center;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 0;
-    }
-
-    button {
-        font-size: 1.3rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-    .container {
-        width: 100%;
-        margin: 0;
-        margin-top: 2rem;
-    }
-
-    .text-info {
-        width: 80%;
-        height: 50%;
-        font-size: 0.8rem;
-        /* margin: 0 auto; */
-    }
-
-    .btn-info i {
-        font-size: 48px;
-    }
-
-    div.player-score {
-        margin: 0.5rem auto;
-        width: 3rem;
-        height: 3rem;
-        line-height: 2rem;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 5.5rem;
-    }
-    button {
-        font-size: 1.4rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    .btn-new {
-        margin-top: 2%;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* ----------- Nexus 7 ----------- */
-
-/* Portrait and Landscape */
-
-/* Landscape */
-@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: landscape) {
-    body {
-        /* overflow-y: scroll; */
-        font-size: 1.1rem;
-        line-height: 1.1;
-    }
-
-    .text-info {
-        width: 100%;
-        height: 100%;
-        font-size: 0.8rem;
-    }
-
-    .btn-info i {
-        font-size: 48px;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        margin-top: 0.2rem;
-    }
-
-    .dice {
-        width: 25%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .dice img {
-        width: 60%;
-    }
-
-    div.player-score {
-        margin: 0.5rem auto;
-        width: 3rem;
-        height: 3rem;
-        line-height: 2rem;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 2.5rem;
-    }
-
-    button {
-        font-size: 1.2rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    .btn-new {
-        margin-top: 2%;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* ----------- iPhone X ----------- */
-
-/* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-    body {
-        font-size: 1.1rem;
-        line-height: 1;
-    }
-
-    .btn-info i {
-        font-size: 40px;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        margin-top: 0.2rem;
-    }
-
-    .text-info {
-        width: 100%;
-        height: 100%;
-        font-size: 0.8rem;
-    }
-
-    .dice {
-        width: 25%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .dice img {
-        width: 50%;
-    }
-
-    div.player-score {
-        margin: 0.5rem auto;
-        width: 3rem;
-        height: 3rem;
-        line-height: 2rem;
-    }
-
-    button {
-        font-size: 1.1rem;
-        padding: 0.1rem;
-        border-radius: 10px;
-    }
-
-    .btn-new {
-        margin-top: 2%;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-/* Portrait and Landscape */
-
-/* Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-    body {
-        font-size: 1.1rem;
-        line-height: 1.1;
-    }
-
-    .btn-info i {
-        font-size: 40px;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        margin-top: 0.2rem;
-    }
-
-    .text-info {
-        width: 100%;
-        height: 100%;
-        font-size: 0.8rem;
-    }
-
-    .dice {
-        width: 25%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .dice img {
-        width: 60%;
-    }
-
-    div.player-score {
-        margin: 0.5rem auto;
-        width: 3rem;
-        height: 3rem;
-        line-height: 2rem;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 2.5rem;
-    }
-
-    button {
-        font-size: 1.2rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    .btn-new {
-        margin-top: 2%;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* ----------- iPhone 4 and 4S ----------- 320 - */
-/* ----------- iPhone 6, 6S, 7 and 8 ----- 375 - */
-
-/* Portrait */
-@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-    body {
-        overflow-y: scroll;
-        font-size: 1.1rem;
-        line-height: 1.2;
-    }
-
-    .text-info {
-        width: 100%;
-        height: 100%;
-        font-size: 0.8rem;
-    }
-
-    .btn-info i {
-        font-size: 32px;
-    }
-
-    .dice {
-        display: block;
-        margin: 1.5rem auto;
-        width: 100%;
-    }
-
-    .dice img {
-        width: 35%;
-    }
-
-    div.player-score {
-        width: 3rem;
-        height: 3rem;
-        line-height: 2.1rem;
-    }
-
-    .btn {
-        width: 80%;
-        margin: 1rem auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        align-self: center;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 0;
-    }
-
-    button {
-        font-size: 1.1rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    footer {
-        display: none;
-    }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    body {
-        font-size: 1.1rem;
-        line-height: 1.1;
-    }
-
-    .text-info {
-        width: 100%;
-        height: 100%;
-        font-size: 0.9rem;
-    }
-
-    .btn-info i {
-        font-size: 32px;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-        margin-top: 0.2rem;
-    }
-
-    .dice {
-        width: 25%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .dice img {
-        width: 60%;
-    }
-
-    div.player-score {
-        margin: 0.5rem auto;
-        width: 3rem;
-        height: 3rem;
-        line-height: 2rem;
-    }
-
-    .btn button:nth-child(2) {
-        margin-top: 2.5rem;
-    }
-
-    button {
-        font-size: 1.2rem;
-        padding: 0.2rem;
-        border-radius: 10px;
-    }
-
-    .btn-new {
-        margin-top: 2%;
-    }
-
-    footer {
-        display: none;
     }
 }
