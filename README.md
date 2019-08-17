@@ -1,4 +1,4 @@
-<!-- 
+
 The Pig Game
 
 GAME RULES
@@ -9,4 +9,3 @@ GAME RULES
 - the player can choose to 'hold', which means that his round score gets added to his global score. After that, it's next player's turn
 - the first player to reach 100 points on global wins the game
  
- -->
